@@ -59,6 +59,19 @@
             <h2>Edit Profile</h2>
             <form id="editProfileForm">
                 <div class="form-group">
+                    <label for="editProfilePic">Profile Picture</label>
+                    <div class="custom-file-upload">
+                        <input type="file" id="editProfilePic" accept="image/*">
+                        <label for="editProfilePic" class="file-upload-btn">
+                            <span class="upload-icon">📸</span>
+                            Choose Picture
+                        </label>
+                    </div>
+                    <div class="preview-container">
+                        <img id="imagePreview" src="" alt="Preview" style="display: none;">
+                    </div>
+                </div>
+                <div class="form-group">
                     <label for="editUsername">Username</label>
                     <input type="text" id="editUsername" required>
                 </div>

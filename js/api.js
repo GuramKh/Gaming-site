@@ -53,7 +53,6 @@ function filterGames(games, genre = '', search = '') {
 
 function displayGames(games) {
     const gamesGrid = document.querySelector('.games-grid');
-    // Only proceed if we're on a page with games grid
     if (!gamesGrid) return;
 
 

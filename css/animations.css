@@ -115,7 +115,6 @@
 
 
 
-/* Responsive styles for screens up to 768px */
 @media screen and (max-width: 768px) {
   .game-card:hover {
     transform: translateY(-5px);
@@ -136,7 +135,6 @@
   }
 }
 
-/* Responsive styles for screens up to 480px */
 @media screen and (max-width: 480px) {
   .login-btn, .edit-profile-btn {
     animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;

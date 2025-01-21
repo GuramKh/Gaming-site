@@ -110,14 +110,12 @@
 
 
 
-/* Responsive styles for screens up to 1024px */
 @media screen and (max-width: 1024px) {
   .form-container {
     max-width: 380px;
   }
 }
 
-/* Responsive styles for screens up to 768px */
 @media screen and (max-width: 768px) {
   .login-container {
     padding: 80px 15px 30px;
@@ -133,7 +131,6 @@
   }
 }
 
-/* Responsive styles for screens up to 480px */
 @media screen and (max-width: 480px) {
   .login-container {
     padding: 60px 15px 20px;
@@ -163,7 +160,6 @@
   }
 }
 
-/* Responsive styles for screens up to 320px */
 @media screen and (max-width: 320px) {
   .login-container {
     padding: 40px 10px 20px;

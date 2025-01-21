@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
         editBtn: document.querySelector('.edit-profile-btn'),
         cancelBtn: document.querySelector('.cancel-btn'),
         editForm: document.getElementById('editProfileForm'),
+        profilePicInput: document.getElementById('editProfilePic'),
+        imagePreview: document.getElementById('imagePreview'),
+        profileAvatar: document.querySelector('.profile-avatar'),
         displayElements: {
             username: document.getElementById('username'),
             email: document.getElementById('email'),
@@ -17,7 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
         formInputs: {
             username: document.getElementById('editUsername'),
             email: document.getElementById('editEmail'),
-            favGenre: document.getElementById('editFavGenre')
+            favGenre: document.getElementById('editFavGenre'),
+            profilePic: document.getElementById('editProfilePic')
         }
     };
 
@@ -47,6 +51,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error('Error updating user:', error);
                 return false;
             }
+        },
+
+        updateUserWithImage(userData, imageFile) {
+            return new Promise((resolve, reject) => {
+                if (imageFile) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        const updatedData = {
+                            ...userData,
+                            profilePic: e.target.result
+                        };
+                        const success = this.updateUser(updatedData);
+                        if (success) {
+                            resolve(updatedData);
+                        } else {
+                            reject('Failed to update user');
+                        }
+                    };
+                    reader.readAsDataURL(imageFile);
+                } else {
+                    const success = this.updateUser(userData);
+                    if (success) {
+                        resolve(userData);
+                    } else {
+                        reject('Failed to update user');
+                    }
+                }
+            });
         }
     };
 
@@ -55,12 +87,20 @@ document.addEventListener('DOMContentLoaded', () => {
             elements.displayElements.username.textContent = user.username;
             elements.displayElements.email.textContent = user.email;
             elements.displayElements.favGenre.textContent = user.favGenre || 'Not set';
+            
+            if (user.profilePic) {
+                elements.profileAvatar.src = user.profilePic;
+            }
         },
 
         initializeEditForm(user) {
             elements.formInputs.username.value = user.username;
             elements.formInputs.email.value = user.email;
             elements.formInputs.favGenre.value = user.favGenre || 'Action';
+            if (user.profilePic) {
+                elements.imagePreview.src = user.profilePic;
+                elements.imagePreview.style.display = 'block';
+            }
         },
 
         toggleModal(show = true) {
@@ -69,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const EventHandlers = {
-        handleSubmit(e, currentUser) {
+        async handleSubmit(e, currentUser) {
             e.preventDefault();
             
             const updatedUser = {
@@ -79,9 +119,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 favGenre: elements.formInputs.favGenre.value
             };
 
-            if (UserManager.updateUser(updatedUser)) {
-                UIController.updateProfileDisplay(updatedUser);
+            try {
+                const imageFile = elements.formInputs.profilePic.files[0];
+                const finalUserData = await UserManager.updateUserWithImage(updatedUser, imageFile);
+                UIController.updateProfileDisplay(finalUserData);
                 UIController.toggleModal(false);
+            } catch (error) {
+                console.error('Error updating profile:', error);
             }
         },
 
@@ -91,6 +135,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     };
+
+    // Image preview handler
+    elements.profilePicInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                elements.imagePreview.src = e.target.result;
+                elements.imagePreview.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+    });
 
     const init = () => {
         const currentUser = UserManager.getCurrentUser();

@@ -218,11 +218,6 @@ body {
   justify-content: center;
 }
 
-/* .scroll-top.visible {
-  opacity: 1;
-  visibility: visible;
-} */
-
 
 
 .scroll-top:hover {
@@ -275,7 +270,6 @@ footer p {
 
 
 
-/* Responsive styles for screens up to 1024px */
 @media screen and (max-width: 1024px) {
   .category-grid {
     flex-wrap: wrap;
@@ -291,9 +285,18 @@ footer p {
   .nav-container {
     padding: 0 20px;
   }
+
+  .hero-wrapper {
+    height: 100vh;
+    width: 100%;
+  }
+  body{
+    overflow-x: hidden;
+    width: 100%;
+  }
+
 }
 
-/* Responsive styles for screens up to 768px */
 @media screen and (max-width: 768px) {
   .burger-menu {
     display: flex;
@@ -332,9 +335,17 @@ footer p {
   .splide .game-card img {
     height: 150px;
   }
+
+  .hero-wrapper {
+    height: 100vh;
+    width: 100%;
+  }
+  body{
+    overflow-x: hidden;
+    width: 100%;
+  }
 }
 
-/* Responsive styles for screens up to 480px */
 @media screen and (max-width: 480px) {
   .header {
     padding: 0.8rem;
@@ -364,9 +375,16 @@ footer p {
   .scroll-top i {
     font-size: 18px;
   }
+  .hero-wrapper {
+    height: 100vh;
+    width: 100%;
+  }
+  body{
+    overflow-x: hidden;
+    width: 100%;
+  }
 }
 
-/* Responsive styles for screens up to 320px */
 @media screen and (max-width: 320px) {
   .header {
     padding: 0.6rem;
@@ -401,5 +419,13 @@ footer p {
   .splide .game-card h3 {
     font-size: 0.8rem;
     padding: 10px;
+  }
+  .hero-wrapper {
+    height: 100vh;
+    width: 100%;
+  }
+  body{
+    overflow-x: hidden;
+    width: 100%;
   }
 }

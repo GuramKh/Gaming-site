@@ -34,6 +34,97 @@
   font-size: 0.8em;
 }
 
+.custom-file-upload {
+  position: relative;
+  margin: 10px 0;
+}
+
+.custom-file-upload input[type="file"] {
+  position: absolute;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.file-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(145deg, #8a2be2, #7209b7);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7em;
+  transition: all 0.3s ease;
+}
+
+.file-upload-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(114, 9, 183, 0.3);
+  background: linear-gradient(145deg, #7209b7, #8a2be2);
+}
+
+.file-upload-btn:active {
+  transform: translateY(0);
+}
+
+.upload-icon {
+  font-size: 1em;
+}
+
+.preview-container {
+  margin-top: 10px;
+  text-align: center;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.custom-file-upload {
+  position: relative;
+  margin: 10px 0;
+}
+
+.file-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(145deg, #8a2be2, #7209b7);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7em;
+  transition: all 0.3s ease;
+}
+
+.upload-icon {
+  font-size: 1em;
+}
+
+.preview-container {
+  margin-top: 10px;
+  text-align: center;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+#imagePreview {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 0 10px rgba(114, 9, 183, 0.2);
+}
+
+
+
+
 
 
 .modal {
@@ -111,7 +202,6 @@
 .modal-buttons {
   display: flex;
   justify-content: space-between;
-  /* gap: 15px; */
   margin-top: 25px;
 }
 
@@ -134,14 +224,12 @@
 
 
 
-/* Responsive styles for screens up to 1024px */
 @media screen and (max-width: 1024px) {
   .profile-container {
     max-width: 700px;
   }
 }
 
-/* Responsive styles for screens up to 768px */
 @media screen and (max-width: 768px) {
   .profile-container {
     padding: 80px 15px 30px;
@@ -162,7 +250,6 @@
   }
 }
 
-/* Responsive styles for screens up to 480px */
 @media screen and (max-width: 480px) {
   .profile-card {
     padding: 20px;
@@ -195,7 +282,6 @@
   }
 }
 
-/* Responsive styles for screens up to 320px */
 @media screen and (max-width: 320px) {
   .profile-container {
     padding: 70px 10px 20px;
