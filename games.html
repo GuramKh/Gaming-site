@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games Library - GameZone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/games.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">GameZone</div>
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li class="profile-link" style="display: none;"><a href="profile.html">Profile</a></li>
+                <li><a href="login.html" class="login-link">Login</a></li>
+            </ul>        
+        </nav>
+    </header>
+
+    <main class="games-container">
+        <h1 class="animate__animated animate__fadeIn">Games Library</h1>
+        
+        <div class="filters">
+            <select id="genreFilter">
+                <option value="">All Genres</option>
+                <option value="action">Action</option>
+                <option value="rpg">RPG</option>
+                <option value="strategy">Strategy</option>
+                <option value="sports">Sports</option>
+                <option value="adventure">Adventure</option>
+            </select>
+            <input type="text" id="searchGame" placeholder="Search games...">
+        </div>
+
+        
+    </main>
+
+    <div class="games-grid">
+    
+    </div>
+
+    <div class="loading-spinner">Loading...</div>
+    
+    <footer>
+        <p>&copy; 2024 GameZone. All rights reserved.</p>
+    </footer>
+
+    <button id="scrollToTop" class="scroll-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/validation.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - GameZone</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="header">
+      <nav class="nav-container">
+        <div class="logo">GameZone</div>
+        <div class="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li class="profile-link" style="display: none;"><a href="profile.html">Profile</a></li>
+            <li><a href="login.html" class="login-link">Login</a></li>
+        </ul>        
+      </nav>
+    </header>
+
+    <main class="profile-container">
+        <div class="profile-card animate__animated animate__fadeIn">
+            <div class="profile-header">
+                <img src="assets/images/avatar-default.png" alt="Profile Avatar" class="profile-avatar">
+                <h1>My Profile</h1>
+            </div>
+
+            <div class="profile-info">
+                <div class="info-group">
+                    <label>Username</label>
+                    <p id="username"></p>
+                </div>
+                <div class="info-group">
+                    <label>Email</label>
+                    <p id="email"></p>
+                </div>
+                <div class="info-group">
+                    <label>Favorite Genre</label>
+                    <p id="favGenre">Not set</p>
+                </div>
+            </div>            
+
+            <button class="edit-profile-btn">Edit Profile</button>
+        </div>
+    </main>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <h2>Edit Profile</h2>
+            <form id="editProfileForm">
+                <div class="form-group">
+                    <label for="editUsername">Username</label>
+                    <input type="text" id="editUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="editEmail">Email</label>
+                    <input type="email" id="editEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="editFavGenre">Favorite Genre</label>
+                    <select id="editFavGenre">
+                        <option value="Action">Action</option>
+                        <option value="RPG">RPG</option>
+                        <option value="Strategy">Strategy</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Adventure">Adventure</option>
+                    </select>
+                </div>
+                <div class="modal-buttons">
+                    <button type="submit" class="save-btn">Save Changes</button>
+                    <button type="button" class="cancel-btn">Cancel</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    
+
+    <footer>
+        <p>&copy; 2024 GameZone. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

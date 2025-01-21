@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameZone - Your Gaming Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">GameZone</div>
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li class="profile-link" style="display: none;"><a href="profile.html">Profile</a></li>
+                <li><a href="login.html" class="login-link">Login</a></li>
+            </ul>            
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero-wrapper animate__animated animate__fadeIn">
+            <section class="hero">
+                <h1>Welcome to GameZone</h1>
+                <p>Discover the latest and greatest games</p>
+            </section>
+        </div>
+        
+
+        <section class="featured-games">
+            <h2>Featured Games</h2>
+            <div class="splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories">
+            <h2>Game Categories</h2>
+            <div class="category-grid">
+                
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 GameZone. All rights reserved.</p>
+    </footer>
+
+    <button id="scrollToTop" class="scroll-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/validation.js"></script>
+</body>
+</html>
