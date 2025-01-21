@@ -23,6 +23,7 @@ body {
   flex-direction: column;
   overflow-x: hidden;
   width: 100%;
+  position: relative;
 }
 
 .hero-wrapper {
@@ -286,14 +287,6 @@ footer p {
     padding: 0 20px;
   }
 
-  .hero-wrapper {
-    height: 100vh;
-    width: 100%;
-  }
-  body{
-    overflow-x: hidden;
-    width: 100%;
-  }
 
 }
 
@@ -336,14 +329,6 @@ footer p {
     height: 150px;
   }
 
-  .hero-wrapper {
-    height: 100vh;
-    width: 100%;
-  }
-  body{
-    overflow-x: hidden;
-    width: 100%;
-  }
 }
 
 @media screen and (max-width: 480px) {
@@ -374,14 +359,6 @@ footer p {
 
   .scroll-top i {
     font-size: 18px;
-  }
-  .hero-wrapper {
-    height: 100vh;
-    width: 100%;
-  }
-  body{
-    overflow-x: hidden;
-    width: 100%;
   }
 }
 
@@ -419,13 +396,5 @@ footer p {
   .splide .game-card h3 {
     font-size: 0.8rem;
     padding: 10px;
-  }
-  .hero-wrapper {
-    height: 100vh;
-    width: 100%;
-  }
-  body{
-    overflow-x: hidden;
-    width: 100%;
   }
 }
